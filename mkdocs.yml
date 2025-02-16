@@ -4,8 +4,10 @@ copyright: Copyright &copy; 2025 NextGArch Lab, University of Michigan
 
 nav:
   - Home: 
-    - home/home.md
+    - The Gigaflow Project: home/home.md
     - Publications: home/publications.md
+    - Release Notes: home/release-notes.md
+    - Team: home/team.md
   - Getting Started: 
     - Overview: getting-started/overview.md
     - Setup and Installation: getting-started/installation.md
@@ -18,9 +20,6 @@ nav:
     - Gigaflow Architecture: deepdive/architecture.md
     - Gigaflow Fast Path: deepdive/fast-path.md
     - Gigaflow Slow Path: deepdive/slow-path.md
-  - About: 
-    - Release Notes: about/release-notes.md
-    - Team: about/about.md
 
 theme: 
   name: material
