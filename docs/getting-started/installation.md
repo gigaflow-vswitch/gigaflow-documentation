@@ -26,7 +26,7 @@ The physical resources required on each machine are labeled on [Figure 2](#testb
 
 !!! Tip
 
-    These three machines can also be VMs running on the same physical host. The experiments in the paper were performed where the **Ansible** orchestrator was running on the same machine as `gvs` but it could also run on the `tgen` or the collector machine. Finally, the collector can also be the same VM/machine running `gvs` or `tgen`. 
+    These three machines can also be VMs running on the same physical host. The experiments in the paper were performed where the **Ansible** orchestrator was running on the same machine as `gvs` but it could also run on the `tgen` or the collector machine. The collector can be the same VM/machine running `gvs` or `tgen`. Finally, the memory and CPU requirements might seem bloated because of the test setup used for experiments. You should be able to run with much fewer resources (e.g. 16 cores, 16GB RAM) as long as the Intel XL710 10/40G NICs are available.
 
 ## Testbed Configuration
 
