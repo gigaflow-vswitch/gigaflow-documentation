@@ -70,7 +70,7 @@ make run-gvs-bm-experiment
 make teardown-gvs-experiment
 ```
 
-## Run Specific Experiment for One vSwitch Pipeline
+## Run Custom Experiment
 
 To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in `vars/main.yml`.
 
