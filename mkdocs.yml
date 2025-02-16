@@ -10,14 +10,14 @@ nav:
     - Overview: getting-started/overview.md
     - Setup and Installation: getting-started/installation.md
     - Demo: getting-started/demo.md
-  - Gigaflow Deep Dive:
-    - Gigaflow Architecture: deepdive/architecture.md
-    - Gigaflow Fast Path: deepdive/fast-path.md
-    - Gigaflow Slow Path: deepdive/slow-path.md
   - User Guide:
     - Project Configuration: userguide/configuration.md
     - Usage: userguide/usage.md
     - Examples: userguide/examples.md
+  - Gigaflow Deep Dive:
+    - Gigaflow Architecture: deepdive/architecture.md
+    - Gigaflow Fast Path: deepdive/fast-path.md
+    - Gigaflow Slow Path: deepdive/slow-path.md
   - About: 
     - Release Notes: about/release-notes.md
     - Team: about/about.md
