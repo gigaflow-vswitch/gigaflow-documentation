@@ -16,7 +16,7 @@ make ping
 
 Run all the following commands from within this Ansible docker container.
 
-## Run All Experiments (End-to-End and Microbenchmarks)
+## Run All Experiments
 
 To setup and run all end-to-end and microbenchmark experiments, run the following sequence of commands:
 
