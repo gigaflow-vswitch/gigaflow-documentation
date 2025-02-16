@@ -13,7 +13,7 @@ nav:
     - Setup and Installation: getting-started/installation.md
     - Demo: getting-started/demo.md
   - User Guide:
-    - Project Configuration: userguide/configuration.md
+    - Configuration: userguide/configuration.md
     - Usage: userguide/usage.md
     - Examples: userguide/examples.md
   - Gigaflow Deep Dive:
