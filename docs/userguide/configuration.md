@@ -21,7 +21,7 @@ COLLECTOR ansible_host=<collector-ip> ansible_user=<collector-username> ansible_
 
 To setup and run a specific experiment (with a given locality, vSwitch pipeline, and Gigaflow tables configuration), modify the following variables in `vars/main.yml`.
 
-```yaml title="vars/main.yml"
+```yaml title="vars/main.yml" linenums="1"
 
 # the locality (high/low) to pick the correct traffic
 # choose an option from locality_static

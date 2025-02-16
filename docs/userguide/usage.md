@@ -5,12 +5,12 @@ icon: material/clipboard-check
 # Usage
 
 - Start the Ansible docker by using the following command.
-```sh
+```sh title="Terminal"
 make ansible
 ```
 
 - Test connectivity between all three machines:
-```sh
+```sh title="Ansible Terminal"
 make ping
 ```
 
@@ -20,7 +20,7 @@ Run all the following commands from within this Ansible docker container.
 
 To setup and run all end-to-end and microbenchmark experiments, run the following sequence of commands:
 
-```sh
+```sh title="Ansible Terminal"
 # retrieve rulesets and traffic from COLLECTOR and place them on OVS and TGEN
 # this will also install gvs (gvs with Gigaflow), the traffic generator, and all their dependencies
 make setup-gvs-experiment
@@ -39,7 +39,7 @@ make teardown-gvs-experiment
 
 To setup and run only end-to-end experiments:
 
-```sh
+```sh title="Ansible Terminal"
 # retrieve rulesets and traffic from COLLECTOR and place them on OVS and TGEN
 # this will also install gvs (gvs with Gigaflow), the traffic generator, and all their dependencies
 make setup-gvs-experiment
@@ -56,7 +56,7 @@ make teardown-gvs-experiment
 ## Run Microbenchmarks
 To setup and run only microbenchmark experiments:
 
-```sh
+```sh title="Ansible Terminal"
 # retrieve rulesets and traffic from COLLECTOR and place them on OVS and TGEN
 # this will also install gvs (gvs with Gigaflow), the traffic generator, and all their dependencies
 make setup-gvs-experiment
@@ -72,9 +72,9 @@ make teardown-gvs-experiment
 
 ## Run Specific Experiment for One vSwitch Pipeline
 
-To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in [vars/main.yml](vars/main.yml).
+To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in `vars/main.yml`.
 
-```yml
+```yaml title="vars/main.yml" linenums="1"
 
 # the locality (high/low) to pick the correct traffic
 # choose an option from locality_static
@@ -100,7 +100,7 @@ gigaflow_dynamic:
 
 Once these variables are setup, run the following sequence of commands. 
 
-```sh
+```sh title="Ansible Terminal"
 # sync the pipelines/traffic from COLLECTOR to NODES
 make install-dataset 
 
