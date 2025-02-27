@@ -18,3 +18,6 @@ With our artifact, we share the ansible playbooks and the source code for the va
 - OVS Gigaflow - https://github.com/gigaflow-vswitch/gvs.git
 - Traffic Generator - https://github.com/gigaflow-vswitch/tgen.git
 
+## Generating the vSwitch Pipelines
+
+## Generating the Traffic Workloads

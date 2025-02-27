@@ -9,10 +9,10 @@ nav:
     - Release Notes: home/release-notes.md
     - Team: home/team.md
   - Quick Start: 
-    - Overview: getting-started/overview.md
     - Setup and Installation: getting-started/installation.md
     - Demo: getting-started/demo.md
   - User Guide:
+    - Overview: userguide/overview.md
     - Configurations: userguide/configuration.md
     - Usage: userguide/usage.md
     - Examples: userguide/examples.md
