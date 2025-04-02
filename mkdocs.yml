@@ -3,75 +3,46 @@ site_author: Annus Zulfiqar
 copyright: Copyright &copy; 2025 NextGArch Lab, University of Michigan
 
 nav:
-  - Home: 
-    - The Gigaflow Project: home.md
-    - Publications: home/publications.md
-    - Release Notes: home/release-notes.md
-    - Team: home/team.md
-  - Quick Start: 
-    - Setup and Installation: getting-started/installation.md
-    - Demo: getting-started/demo.md
-  - User Guide:
-    - Overview: userguide/overview.md
-    - Configurations: userguide/configuration.md
-    - Usage: userguide/usage.md
-    - Examples: userguide/examples.md
-  - Technical Deep Dive:
-    - Gigaflow Architecture: deepdive/architecture.md
-    - Gigaflow Fast Path: deepdive/fast-path.md
-    - Gigaflow Slow Path: deepdive/slow-path.md
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Installation: installation.md
+  - Usage Guide: usage.md
+  - Benchmark: benchmarks.md
+  - Technical Details: technical-details.md
+  - Contributing: contributing.md
+  - References: publications.md
 
 theme: 
   name: material
+  logo: assets/gf-icon-transparent-smaller.png
+  favicon: assets/gf-icon-transparent-smaller.png
   features:
-    - announce.dismiss
-    - content.action.edit
-    - content.action.view
-    - content.code.annotate
-    - content.code.copy
-    # - content.code.select
-    # - content.footnote.tooltips
-    # - content.tabs.link
-    - content.tooltips
-    # - header.autohide
-    # - navigation.expand
-    - navigation.footer
-    - navigation.indexes
-    # - navigation.instant
-    # - navigation.instant.prefetch
-    # - navigation.instant.progress
-    # - navigation.prune
-    - navigation.sections
     - navigation.tabs
-    # - navigation.tabs.sticky
     - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
+    - navigation.footer
     - search.suggest
-    - toc.follow
-    # - toc.integrate
+    - search.highlight
+    - toc.integrate
+    - content.code.copy
+    - dark_mode
   palette: 
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/toggle-switch
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
       accent: indigo
       toggle:
-        icon: material/toggle-switch-off
-        name: Switch to light mode
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
   font:
     text: Roboto
     code: Roboto Mono
-  # favicon: material/format-line-style
-  icon:
-    logo: material/alpha-g-circle
+  # icon:
+  #   logo: material/alpha-g-circle
 
 # Plugins
 plugins:
@@ -90,7 +61,7 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/solid/file-pdf
-      link: https://annuszulfiqar2021.github.io/papers/gigaflow-asplos2025.pdf
+      link: https://dl.acm.org/doi/10.1145/3676641.3716000
     - icon: fontawesome/brands/github
       link: https://github.com/gigaflow-vswitch
     - icon: fontawesome/brands/linkedin
@@ -100,50 +71,20 @@ extra:
 
 # Extensions
 markdown_extensions:
-  - abbr
   - admonition
-  - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
-  - toc:
-      permalink: true
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink:
-      normalize_issue_symbols: true
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.snippets:
-      auto_append:
-        - includes/mkdocs.md
+  - pymdownx.snippets
+  - pymdownx.details  # Supports '!!!' syntax (for blocks like '!!! tip')
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-      combine_header_slug: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
-  - pymdownx.tasklist:
-      custom_checkbox: true
+  - pymdownx.tasklist
+  - pymdownx.arithmatex  # Enables math rendering if required
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
   - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - attr_list
+  - md_in_html
