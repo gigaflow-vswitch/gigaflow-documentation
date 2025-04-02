@@ -33,7 +33,7 @@ Unlike traditional caches (e.g, Megaflow) that capture entire traversals as cach
 * Zero-copy operations for maximum performance (TODO: fix)
 * SmartNIC offload available for Xilinx Alveo U250 Data Center Accelerator (coming soon!)
 
-## Choose your path with Gigaflow
+## Next Steps with Gigaflow
 
 ### 👉 Quick Start
 
