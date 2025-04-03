@@ -52,22 +52,28 @@ The following are their detailed descriptions (more details in the [paper](https
 Example pipelines, their rulesets, and traffic traces used for benchmarking Gigaflow are publicly available via [FigShare](https://figshare.com/articles/dataset/Gigaflow_vSwitch_Pipelines_and_Traffic_Traces/28489208).
 Download and place them on the `COLLECTOR` machine as following:
 
+Step 1: create directory
+
 ```shell title="shell"
-# step 1: create directory
 mkdir ~/Gigaflow
 cd ~/Gigaflow
+```
 
-# step 2: get traffic traces
+Step 2: download the traffic traces and pipelines
+```shell title="shell"
 wget --content-disposition "https://figshare.com/ndownloader/files/52608875"
 # .. and vSwitch pipelines
 wget --content-disposition "https://figshare.com/ndownloader/files/52608872"
+```
 
-# step 3: extract
+Step 3: unzip the downloaded files
+```shell title="shell"
 unzip Traffic-Locality.zip
 unzip vSwitch-Pipelines.zip
+```
 
-# step 4: rename downloaded directories
-# .. to match the vars/main.yml file
+Step 4: rename downloaded directories to match the vars/main.yml file
+```shell title="shell"
 mv Traffic-Locality mini_profiles
 mv vSwitch-Pipelines ovs-pipelines
 ```
