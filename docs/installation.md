@@ -33,6 +33,74 @@ The physical resources required on each machine are labeled on above [figure](#t
 
     These three machines can also be VMs running on the same physical host. The experiments in the paper were performed where the **Ansible** orchestrator was running on the same machine as `gvs` but it could also run on the `tgen` or the collector machine. The collector can be the same VM/machine running `gvs` or `tgen`. Finally, the memory and CPU requirements might seem bloated because of the test setup used for experiments. You should be able to run with much fewer resources (e.g. 16 cores, 16GB RAM) as long as the Intel XL710 10/40G NICs are available.
 
+## Workloads
+To evaluate a virtual switch, you need some packet pipeline rulesets and matching traffic traces.
+We have provided a set of 5 real-world vSwitch pipelines, their corresponding rulesets and traffic traces that we used for benchmarking Gigaflow.
+The following are their detailed descriptions (more details in the [paper](https://dl.acm.org/doi/10.1145/3676641.3716000).
+
+| **Pipeline** | **Description** | **Tables** | **Traversals** |
+|:--------:|-----------|:------:|:----------:|
+| OFD | CORD’s Openflow data plane abstraction (OFDPA) for HW/SW switch integration | 10 | 5 |
+| PSC | An example L2L3-ACL pipeline implemented for the Pisces paper | 7 | 2 |
+| OLS | OVN Logical Switch pipeline to manage logical virtual network topologies in OVS | 30 | 23 |
+| ANT | Antrea pipeline implementing networking and security for Kubernetes clusters | 22 | 20 |
+| OTL | Openflow Table Type Patterns (TTP) to configure L2L3-ACL policies using OVS | 8 | 11 |
+
+These pipelines, their rulesets, and traffic traces used for benchmarking Gigaflow are publicly available via [FigShare](https://figshare.com/articles/dataset/Gigaflow_vSwitch_Pipelines_and_Traffic_Traces/28489208).
+Download them and place them on the `COLLECTOR` machine as following:
+
+```shell title="COLLECTOR"
+# step 1: create directory
+mkdir ~/Gigaflow
+cd ~/Gigaflow
+
+# step 2: get traffic traces
+wget --content-disposition "https://figshare.com/ndownloader/files/52608875"
+# .. and vSwitch pipelines
+wget --content-disposition "https://figshare.com/ndownloader/files/52608872"
+
+# step 3: extract
+unzip Traffic-Locality.zip
+unzip vSwitch-Pipelines.zip
+```
+
+Now, we are ready to setup the orchestrator and install `gvs` and the traffic generator (`tgen`).
+
+## Installation
+
+You only need to setup the [gigaflow-orchestrator](https://github.com/gigaflow-vswitch/Gigaflow-Artifact-ASPLOS2025/) repository that will bringup the testbed, install all dependencies (including `gvs` and traffic generator), and run the experiments. 
+The orchestration is enabled via **Ansible** which itself is provided as a docker container.
+
+```shell
+git clone https://github.com/gigaflow-vswitch/Gigaflow-Artifact-ASPLOS2025/
+```
+
+Now, you can install [gvs](https://github.com/gigaflow-vswitch/gvs) and [tgen](https://github.com/gigaflow-vswitch/tgen) alongside all their dependencies by running the following command from the `Gigaflow-Artifact-ASPLOS2025` directory:
+
+```shell title="shell"
+cd Gigaflow-Artifact-ASPLOS2025
+make ansible
+```
+
+This should start an `Ansible` docker container.
+Run the next commands from inside this container.
+
+!!! Tip
+
+    Except for `make ansible`, all make targets must always be run from within the Ansible docker container.
+
+```shell title="Ansible Container"
+make setup-gvs-experiment
+```
+
+You can also install them separately as following:
+
+```shell title="Ansible Container"
+make install-dataset
+make install-gvs
+make install-tgen
+```
+
 ### Inventory Configurations
 
 We use Ansible to orcherstrate all experiments using these three machines. Therefore, we require `root` access to each of them. To populate for each machine, update the `inventory.ini` file as following:

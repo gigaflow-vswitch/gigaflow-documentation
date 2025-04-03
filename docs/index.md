@@ -7,30 +7,28 @@ description: A pipeline-aware sub-traversal cache for the Open vSwitch
   <img src="assets/gf-icon-transparent-small.png" style="width: 200px;"/>
 </div>
 
-<!-- ![Alt text](figures/gigaflow.png) -->
-
 # Gigaflow Virtual Switch (GvS)
 Gigaflow is a multi-table cache architecture for the Open vSwitch (OVS) that captures pipeline-aware locality from the vSwitch pipelines to deliver significantly higher hit rate and lower end-to-end per-packet latency.
 Unlike traditional caches (e.g, Megaflow) that capture entire traversals as cache entries, Gigaflow caches sub-traversals that are shared among many flows to capture a cross-product rule space in the SmartNIC.
 
 ## Why Gigaflow?
 
-### 🚀 Lower End-to-End Traffic Latency
+### 🚀 Minimizes Traffic Latency
 
-* Captures a cross-product rule space in a multi-table cache, up to 450x bigger than Megaflow!
-* Delivers significantly cache higher hit rate than traditional Megaflow cache
-* Reduces up to 90% cache misses while using 18% lesser cache entries
+* Captures a cross-product rule space—up to 450x bigger than Megaflow!
+* Delivers up to 51% higher cache hit rate than traditional Megaflow cache
+* Reduces cache misses by up to 90% while using 18% lesser cache entries
 
 ### 💡 Key Features
 
 * **Pipeline-Aware Locality**: Captures locality from the vSwitch pipelines using disjointedness
 * **Longest Traversal Matching (LTM)**: Handles correctness in a multi-table lookup cache architecture 
-* **Open vSwitch (OVS) Integration**: Integrated in the OVS as a new caching sub-system
+* **Open vSwitch (OVS) Integration**: Integrated in OVS as a new caching sub-system
 
 ### 🔧 Technical Highlights
 
-* Efficient memory pool management (TODO: fix)
-* Zero-copy operations for maximum performance (TODO: fix)
+* Multi-table cache architecture enabling efficient matching across a significantly expanded rule space
+* Effeciently captures pipeline-aware locality by maximizing sub-traversal level disjointedness
 * SmartNIC offload available for Xilinx Alveo U250 Data Center Accelerator (coming soon!)
 
 ## Next Steps with Gigaflow
