@@ -119,9 +119,7 @@ GVS ansible_host=<ovs-ip> ansible_user=<ovs-username> ansible_password=<ovs-pass
 COLLECTOR ansible_host=<collector-ip> ansible_user=<collector-username> ansible_password=<collector-password> ansible_sudo_pass=<collector-root-password> ansible_ssh_user=<collector-username> ansible_ssh_pass=<collector-root-password>
 ```
 
-### GvS and TGen Installation
-
-Now, you can install [gvs](https://github.com/gigaflow-vswitch/gvs) and [tgen](https://github.com/gigaflow-vswitch/tgen) along with all their dependencies as following:
+To test if all machines are reachable, run the following command:
 
 ```shell title="shell"
 cd Gigaflow-Artifact-ASPLOS2025
@@ -134,6 +132,44 @@ Run the next commands from inside this container.
 !!! Note
 
     Except for `make ansible`, all make targets must always be run from inside this Ansible docker container.
+
+```shell title="Ansible Container"
+make ping
+```
+
+This should be successful and return something like this:
+
+```shell
+root@nga2-vm2:/workdir# make ping
+ansible all -m ping
+COLLECTOR | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+GVS | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+TGEN | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
+
+This means all machines are reachable and you can now proceed to the next step.
+
+### GvS and TGen Installation
+
+Now, you can install [gvs](https://github.com/gigaflow-vswitch/gvs) and [tgen](https://github.com/gigaflow-vswitch/tgen) along with all their dependencies as following:
 
 ```shell title="Ansible Container"
 make setup-gvs-experiment
