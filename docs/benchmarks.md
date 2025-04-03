@@ -80,9 +80,7 @@ gigaflow_dynamic:
 Once these variables are setup, run the following sequence of commands. 
 
 ```shell title="Ansible Container"
-make install-dataset 
-make install-gvs 
-make install-tgen
+make resetup-tgen-scripts
 make start-switch-gvs 
 make install-rules
 make start-tgen
