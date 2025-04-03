@@ -9,7 +9,7 @@ This guide explains how to evaluate Gigaflow against Megaflow cache using real-w
 
 ## Experiment Setup
 
-If you haven't completed the last step of [installation](installation.md), then you need to setup the experiment first.
+If you haven't completed the last step of [installation](installation.md#gvs-and-tgen-installation), then you need to setup the experiment first.
 Inside the Ansible container, run the following command to install the datasets (pipelines and traffic traces) on the GVS and TGEN machines.
 
 ```shell title="Ansible Container"
