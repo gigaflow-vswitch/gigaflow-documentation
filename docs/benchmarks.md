@@ -98,15 +98,11 @@ To stop the experiment and remove all installed components, run the following co
 make teardown-gvs-experiment
 ```
 
-## Results
+<!-- ## Results
 
 The following table compares the iteration time (**s/it**) for different communication strategies, lower is better:
 
-### Analysis
-
-* **OptiReduce consistently outperforms all other methods** across different models and environments.
-* Performance gains are especially significant for **larger models** (GPT-2-large, Llama-3.2), where OptiReduce achieves **up to 40% faster iteration time** in low-tail environment.
-* The benefits are **more pronounced in multi-node environments** (`Env=3`), where communication bottlenecks become more severe and speedups reach around **2x**.
+### Analysis -->
 
 ## Documentation
 

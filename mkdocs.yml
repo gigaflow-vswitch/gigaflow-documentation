@@ -6,9 +6,9 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Installation: installation.md
-  - Usage Guide: usage.md
+  # - Usage Guide: usage.md
   - Benchmarks: benchmarks.md
-  - Technical Details: technical-details.md
+  # - Technical Details: technical-details.md
   - Contributing: contributing.md
   - References: publications.md
 
@@ -41,8 +41,6 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  # icon:
-  #   logo: material/alpha-g-circle
 
 # Plugins
 plugins:
