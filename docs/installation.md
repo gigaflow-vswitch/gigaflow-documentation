@@ -53,7 +53,6 @@ Example pipelines, their rulesets, and traffic traces used for benchmarking Giga
 Download and place them on the `COLLECTOR` machine as following:
 
 Step 1: create directory
-
 ```shell title="shell"
 mkdir ~/Gigaflow
 cd ~/Gigaflow
