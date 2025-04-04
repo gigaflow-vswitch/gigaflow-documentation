@@ -34,6 +34,10 @@ The testbed requires 3 machines:
 * `GVS` &#8594; device-under-test to run `gvs`
 * `TGEN` &#8594; to send/receive traffic
 
+!!! Info
+
+    These machines can also be VMs running on the same physical host. The experiments in the paper were performed where the **Ansible** orchestrator was running on the same machine as `gvs` but it could also run on the `tgen` or the collector machine. The collector can be the same VM/machine running `gvs` or `tgen`. 
+
 ### Hardware Requirements
 
 - **CPU**: Intel Xeon Platinum 8358P (64 cores) @ 2.60GHz
@@ -45,10 +49,6 @@ The testbed requires 3 machines:
 !!! Tip
 
     The memory and CPU requirements might seem bloated because of the test setup used for experiments. You should be able to run with much fewer resources (e.g. 16 cores, 16GB RAM) as long as the Intel XL710 10/40G SmartNICs are available.
-
-!!! Info
-
-    These machines can also be VMs running on the same physical host. The experiments in the paper were performed where the **Ansible** orchestrator was running on the same machine as `gvs` but it could also run on the `tgen` or the collector machine. The collector can be the same VM/machine running `gvs` or `tgen`. 
 
 ## Workloads
 To evaluate a virtual switch, you need some packet pipeline rulesets and matching traffic traces.
