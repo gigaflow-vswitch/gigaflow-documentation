@@ -9,12 +9,12 @@ This guide will help you get started with Gigaflow Virtual Switch (GvS).
 
 ## Quick Start
 
-### 1. Setup Testbed
+### Testbed Setup
 
 To set up a testbed for Gigaflow and do all necessary installations, follow the steps provided in the [Installation Guide](installation.md).
 We also provide ready-made workloads (vSwitch pipelines, rulesets, and traffic traces) for benchmarking Gigaflow which will be installed automatically.
 
-### 2. Benchmark Gigaflow
+### Gigaflow Benchmarks
 
 See our [benchmarking guide](benchmarks.md) for various options to evaluate Gigaflow against Megaflow cache using real-world workloads.
 
