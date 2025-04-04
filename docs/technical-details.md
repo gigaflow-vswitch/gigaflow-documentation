@@ -22,7 +22,15 @@ Gigaflow is built as a caching sub-system in the Open vSwitch.
   <figcaption>Gigaflow cache in the Open vSwitch (OVS)</figcaption>
 </figure>
 
+* The input packet that misses the cache is sent to the userspace where its `flow` is extracted (header field set).
+* The flow passes through the vSwitch pipeline and its traversal is collected.
+* Then, the travesal mapper, based on disjointedness, captures pipeline-aware locality from this traversal and suggests suitable sub-traversals to be cached.
+* Finally, Longest Traversal Matching (LTM) cache entries are generated and installed into the Gigaflow table.
+
 ## Pipeline-Aware Locality
+
+The following figure shows an example of how pipeline-aware locality captures unseen traversals by caching shared sub-traversals.
+We _smartly_ partition the traversal and determine suitable sub-traversals that have a high likelihood of being reused in the future by other flows.
 
 <figure id="gigaflow-figure">
   <img src="/assets/gigaflow-example.gif" width="900">
@@ -30,6 +38,9 @@ Gigaflow is built as a caching sub-system in the Open vSwitch.
 </figure>
 
 ### Disjointedness Property
+
+Capturing pipeline-Aware locality is expensive ([see the paper](https://dl.acm.org/doi/10.1145/3676641.3716000)) but we observe the following: disjoint sub-traversals maximize the cross-product rule space in Gigaflow tables. 
+We implement a dynamic program to find disjoint sub-traversals in a given traversal and this algorithm processes the traversal of each cache miss without looking at how previous cache entries were generated.
 
 <figure id="disjointedness-figure">
   <img src="/assets/disjointedness-example.gif" width="900">
@@ -219,3 +230,8 @@ get_coupling(struct gigaflow_mapping_context *gf_map_ctx,
     return coupling;
 }
 ```
+
+### Putting It All Together
+
+For a given traversal, our disjoint partitioning algorithm tries all sub-traversal combinations and evaluates them for disjointedness using the [get_coupling](#evaluating-a-sub-traversal) function.
+The sub-traversal combination with maximum sum of disjointedness is selected for mapping to the Gigaflow tables.
