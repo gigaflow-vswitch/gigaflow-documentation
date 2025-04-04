@@ -20,6 +20,7 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.footer
+    - content.tooltips
     - search.suggest
     - search.highlight
     - toc.integrate
@@ -30,17 +31,19 @@ theme:
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-sunny
         name: Switch to light mode
     - scheme: default
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-night
         name: Switch to dark mode
   font:
     text: Roboto
     code: Roboto Mono
+extra_css: 
+  - styles/custom.css
 
 # Plugins
 plugins:

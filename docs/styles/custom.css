@@ -1,0 +1,16 @@
+/* Show only light image when using 'default' scheme */
+[data-md-color-scheme="default"] .only-dark {
+  display: none;
+}
+[data-md-color-scheme="default"] .only-light {
+  display: block;
+}
+
+/* Show only dark image when using 'slate' scheme */
+[data-md-color-scheme="slate"] .only-dark {
+  display: block;
+}
+[data-md-color-scheme="slate"] .only-light {
+  display: none;
+}
+

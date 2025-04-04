@@ -18,9 +18,9 @@ make setup-gvs-experiment
 
 This command will also install [gvs](https://github.com/gigaflow-vswitch/gvs) and [tgen](https://github.com/gigaflow-vswitch/tgen) along with all their dependencies on the respective machines.
 
-## Experiment Options
+<!-- ## Experiment Options -->
 
-### Option 1. All
+## Option 1. Run All Experiments
 
 To run all experiments (end-to-end and microbenchmarks) and collect logs, run the following command:
 
@@ -28,7 +28,7 @@ To run all experiments (end-to-end and microbenchmarks) and collect logs, run th
 make run-gvs-experiment
 ```
 
-### Option 2. End-to-End Evals
+## Option 2. End-to-End Evals
 
 To setup and run only end-to-end experiments:
 
@@ -36,16 +36,18 @@ To setup and run only end-to-end experiments:
 make run-gvs-ee-experiment
 ```
 
-### Option 3. Microbenchmarks
+## Option 3. Microbenchmarks
 To setup and run only microbenchmark experiments:
 
 ```shell title="Ansible Container"
 make run-gvs-bm-experiment
 ```
 
-### Option 4. Custom Experiment
+## Option 4. Custom Experiment
 
 To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in `vars/main.yml`.
+
+### Config 1: Locality
 
 The locality (high/low) to generate the correct traffic load. 
 Choose an option from `locality_static`:
@@ -56,6 +58,8 @@ locality_dynamic:
     locality: "high-locality"
 ```
 
+### Config 2: vSwitch Pipeline
+
 The pipeline to install and send traffic for.
 Choose an option from `pipelines_static`:
 
@@ -65,6 +69,8 @@ pipelines_dynamic:
     name: "cord-ofdpa"
     sub_path: "cord/ofdpa"
 ```
+
+### Config 3: Gigaflow Tables
 
 The number of Gigaflow tables and entries in each of them.
 Choose an option from `gigaflow_static`:

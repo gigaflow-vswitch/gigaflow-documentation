@@ -55,5 +55,5 @@ Gigaflow was presented at ASPLOS'25. Read our paper:
 Need help? Here are your options:
 
 * Review all the [documentation](https://gigaflow-vswitch.github.io/)
-* Open an [issue](https://github.com/gigaflow-vswitch/Gigaflow-Artifact-ASPLOS2025/issues)
+* Open an [issue](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/issues)
 * Review [installation guide](installation.md) for setup help

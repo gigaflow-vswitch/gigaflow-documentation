@@ -16,7 +16,7 @@ We also provide ready-made workloads (vSwitch pipelines, rulesets, and traffic t
 
 ### 2. Benchmark Gigaflow
 
-See our [benchmarking guide](benchmarks.md) for running these scripts.
+See our [benchmarking guide](benchmarks.md) for various options to evaluate Gigaflow against Megaflow cache using real-world workloads.
 
 ## What's Next?
 

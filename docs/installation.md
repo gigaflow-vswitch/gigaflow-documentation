@@ -15,8 +15,14 @@ Follow the steps specified at this [link](https://docs.docker.com/engine/install
 
 ## Testbed Setup
 
-<figure markdown="span" id="testbed-figure">
+<!-- <figure markdown="span" id="testbed-figure">
   ![Image title](assets/testbed.png){ width="900" }
+  <figcaption>The testbed setup to run Gigaflow out-of-the-box</figcaption>
+</figure> -->
+
+<figure id="testbed-figure">
+  <img src="/assets/testbed-light.png" class="only-light" width="900">
+  <img src="/assets/testbed-dark.png" class="only-dark" width="900">
   <figcaption>The testbed setup to run Gigaflow out-of-the-box</figcaption>
 </figure>
 
@@ -81,7 +87,7 @@ Now, we are ready to setup the orchestrator and install `gvs` and the traffic ge
 
 ## Orchestrator Setup
 
-You only need to setup the [gigaflow-orchestrator](https://github.com/gigaflow-vswitch/Gigaflow-Artifact-ASPLOS2025/) repository that will bringup the testbed, install all dependencies (including `gvs` and traffic generator), and run the experiments. 
+You only need to setup the [gigaflow-orchestrator](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/) repository that will bringup the testbed, install all dependencies (including `gvs` and traffic generator), and run the experiments. 
 The orchestration is enabled via **Ansible** which itself is provided as a docker container.
 
 !!! Note
@@ -90,12 +96,12 @@ The orchestration is enabled via **Ansible** which itself is provided as a docke
 Clone the orchestrator repository as following:
 
 ```shell title="shell"
-git clone https://github.com/gigaflow-vswitch/Gigaflow-Artifact-ASPLOS2025/
+git clone https://github.com/gigaflow-vswitch/gigaflow-orchestrator/
 ```
 
 ### Update Local Paths
 
-In this repository, modify the following variables in the [vars/main.yml](https://github.com/gigaflow-vswitch/Gigaflow-Artifact-ASPLOS2025/blob/asplos-25/vars/main.yml) file:
+In this repository, modify the following variables in the [vars/main.yml](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/blob/asplos-25/vars/main.yml) file:
 
 ```yaml title="vars/main.yml" linenums="171"
 retrieve:
@@ -113,7 +119,7 @@ Update only the `retrieve.caida.path` and `retrieve.pipelines.path` variables to
 
 We use Ansible to orcherstrate all experiments using the three machines. 
 Therefore, we require `root` access to each of them. 
-To populate for each machine, update the [inventory.ini](https://github.com/gigaflow-vswitch/Gigaflow-Artifact-ASPLOS2025/blob/asplos-25/inventory.ini) file as following:
+To populate for each machine, update the [inventory.ini](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/blob/asplos-25/inventory.ini) file as following:
 
 ```yaml title="inventory.ini" linenums="1"
 [NODES]
