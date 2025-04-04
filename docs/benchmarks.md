@@ -45,7 +45,7 @@ make run-gvs-bm-experiment
 
 ## Option 4. Custom Experiment
 
-To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in `vars/main.yml`.
+To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in [vars/main.yml](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/blob/asplos-25/vars/main.yml).
 
 ### Config 1: Locality
 

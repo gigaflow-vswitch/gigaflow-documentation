@@ -78,7 +78,7 @@ unzip Traffic-Locality.zip
 unzip vSwitch-Pipelines.zip
 ```
 
-Step 4: rename downloaded directories to match the vars/main.yml file
+Step 4: rename downloaded directories to match the `vars/main.yml` file
 ```shell title="shell"
 mv Traffic-Locality mini_profiles
 mv vSwitch-Pipelines ovs-pipelines
