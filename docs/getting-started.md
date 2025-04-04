@@ -14,8 +14,26 @@ This guide will help you get started with Gigaflow Virtual Switch (GvS).
 To set up a testbed for Gigaflow and do all necessary installations, follow the steps provided in the [Installation Guide](installation.md).
 We also provide ready-made workloads (vSwitch pipelines, rulesets, and traffic traces) for benchmarking Gigaflow which will be installed automatically.
 
-### Gigaflow Benchmarks
+### Bootstrap Gigaflow
 
+If you haven't completed the last step of [installation](installation.md#gvs-and-tgen-installation), then you need to setup the experiment first.
+Inside the Ansible container, run the following command to install the datasets (pipelines and traffic traces) on the GVS and TGEN machines.
+
+```shell title="Ansible Container"
+make setup-gvs-experiment
+```
+
+This command will also install [gvs](https://github.com/gigaflow-vswitch/gvs) and [tgen](https://github.com/gigaflow-vswitch/tgen) along with all their dependencies on the respective machines.
+
+<!-- ## Experiment Options -->
+
+### Run All Benchmarks
+
+To run all experiments, including end-to-end and microbenchmarks, and collect performance logs, run the following command:
+
+```shell title="Ansible Container"
+make run-gvs-experiment
+```
 See our [benchmarking guide](benchmarks.md) for various options to evaluate Gigaflow against Megaflow cache using real-world workloads.
 
 ## What's Next?
@@ -27,7 +45,7 @@ See our [benchmarking guide](benchmarks.md) for various options to evaluate Giga
 
 ### Optimizing Performance
 
-* Follow our [Benchmarking Guide](benchmarks.md) to evaluate performance
+* Follow our [Benchmarking Guide](benchmarks.md) for in-depth performance evaluation
 * Learn how to emulate high/low locality environments
 * Comprehensively evaluate Gigaflow against traditional Megaflow cache
 

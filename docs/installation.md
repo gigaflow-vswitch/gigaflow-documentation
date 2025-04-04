@@ -15,6 +15,8 @@ Follow the steps specified at this [link](https://docs.docker.com/engine/install
 
 ## Testbed Setup
 
+The physical resources required on each machine are shown in the following [figure](#testbed-figure).
+
 <!-- <figure markdown="span" id="testbed-figure">
   ![Image title](assets/testbed.png){ width="900" }
   <figcaption>The testbed setup to run Gigaflow out-of-the-box</figcaption>
@@ -34,11 +36,19 @@ The testbed requires 3 machines:
 
 ### Hardware Requirements
 
-The physical resources required on each machine are labeled on above [figure](#testbed-figure).
+- **CPU**: Intel Xeon Platinum 8358P (64 cores) @ 2.60GHz
+- **Memory**: 512 GB RAM
+- **SmartNIC** 
+    - Intel XL710 (10/40G), Dual-port (_for software-only Gigaflow_)
+    - Xilinx Alveo U250 FPGA (_hardware offload, support coming soon!_)
 
 !!! Tip
 
-    These three machines can also be VMs running on the same physical host. The experiments in the paper were performed where the **Ansible** orchestrator was running on the same machine as `gvs` but it could also run on the `tgen` or the collector machine. The collector can be the same VM/machine running `gvs` or `tgen`. Finally, the memory and CPU requirements might seem bloated because of the test setup used for experiments. You should be able to run with much fewer resources (e.g. 16 cores, 16GB RAM) as long as the Intel XL710 10/40G NICs are available.
+    The memory and CPU requirements might seem bloated because of the test setup used for experiments. You should be able to run with much fewer resources (e.g. 16 cores, 16GB RAM) as long as the Intel XL710 10/40G SmartNICs are available.
+
+!!! Info
+
+    These machines can also be VMs running on the same physical host. The experiments in the paper were performed where the **Ansible** orchestrator was running on the same machine as `gvs` but it could also run on the `tgen` or the collector machine. The collector can be the same VM/machine running `gvs` or `tgen`. 
 
 ## Workloads
 To evaluate a virtual switch, you need some packet pipeline rulesets and matching traffic traces.
@@ -53,7 +63,7 @@ The following are their detailed descriptions (more details in the [paper](https
 | ANT | Antrea pipeline implementing networking and security for Kubernetes clusters | 22 | 20 |
 | OTL | Openflow Table Type Patterns (TTP) to configure L2L3-ACL policies using OVS | 8 | 11 |
 
-### Download 
+### Download
 
 Example pipelines, their rulesets, and traffic traces used for benchmarking Gigaflow are publicly available via [FigShare](https://figshare.com/articles/dataset/Gigaflow_vSwitch_Pipelines_and_Traffic_Traces/28489208).
 Download and place them on the `COLLECTOR` machine as following:
@@ -94,15 +104,15 @@ The orchestration is enabled via **Ansible** which itself is provided as a docke
 !!! Note
     All the steps from this point onwards must be run on your orchestrator machine. For our experiments, we used the `gvs` machine as our orchestrator but you can choose a different machine too as long as it has `docker` installed.
 
-Clone the orchestrator repository as following:
+Clone the [gigaflow-orchestrator](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/) repository as following:
 
 ```shell title="shell"
-git clone https://github.com/gigaflow-vswitch/gigaflow-orchestrator/
+git clone https://github.com/gigaflow-vswitch/gigaflow-orchestrator.git
 ```
 
 ### Update Local Paths
 
-In this repository, modify the following variables in the [vars/main.yml](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/blob/asplos-25/vars/main.yml) file:
+In this repository, modify the following variables in the [vars/main.yml](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/blob/asplos-25/vars/main.yml#L171) file:
 
 ```yaml title="vars/main.yml" linenums="171"
 retrieve:
@@ -122,7 +132,7 @@ We use Ansible to orcherstrate all experiments using the three machines.
 Therefore, we require `root` access to each of them. 
 To populate for each machine, update the [inventory.ini](https://github.com/gigaflow-vswitch/gigaflow-orchestrator/blob/asplos-25/inventory.ini) file as following:
 
-```yaml title="inventory.ini" linenums="1"
+```ini title="inventory.ini" linenums="1"
 [NODES]
 TGEN ansible_host=<tgen-ip> ansible_user=<tgen-username> ansible_password=<tgen-password> ansible_sudo_pass=<tgen-root-password>
 GVS ansible_host=<ovs-ip> ansible_user=<ovs-username> ansible_password=<ovs-password> ansible_sudo_pass=<ovs-root-password>
@@ -134,7 +144,7 @@ COLLECTOR ansible_host=<collector-ip> ansible_user=<collector-username> ansible_
 To test if all machines are reachable, run the following command:
 
 ```shell title="shell"
-cd Gigaflow-Artifact-ASPLOS2025
+cd gigaflow-orchestrator
 make ansible
 ```
 
