@@ -66,6 +66,7 @@ cd ~/Gigaflow
 
 Step 2: download the traffic traces and pipelines
 ```shell title="shell"
+# download the CAIDA traffic traces
 wget --content-disposition "https://figshare.com/ndownloader/files/52608875"
 # .. and vSwitch pipelines
 wget --content-disposition "https://figshare.com/ndownloader/files/52608872"
@@ -214,9 +215,9 @@ gigaflow-orchestrator/
 ├── inventory.ini   # Ansible inventory file
 ├── ansible.cfg     # Ansible configuration file
 ├── Makefile        # Makefile for the ansible playbook targets
-├── gvs.yml         # top-level gvs yaml playbook
-├── tgen.yml        # top-level tgen yaml playbook
-└── ...             # other top-level yaml playbooks
+├── gvs.yml         # top-level gvs ansible playbook
+├── tgen.yml        # top-level tgen ansible playbook
+└── ...             # other top-level ansible playbooks
 ```
 
 ## Next Steps

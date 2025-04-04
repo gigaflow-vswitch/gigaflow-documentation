@@ -2,19 +2,49 @@
 </code></pre></div> <p>This command will also install <a href=https://github.com/gigaflow-vswitch/gvs>gvs</a> and <a href=https://github.com/gigaflow-vswitch/tgen>tgen</a> along with all their dependencies on the respective machines.</p> <!-- ## Experiment Options --> <h2 id=option-1-run-all-experiments>Option 1. Run All Experiments</h2> <p>To run all experiments (end-to-end and microbenchmarks) and collect logs, run the following command:</p> <div class=highlight><span class=filename>Ansible Container</span><pre><span></span><code>make<span class=w> </span>run-gvs-experiment
 </code></pre></div> <h2 id=option-2-end-to-end-evals>Option 2. End-to-End Evals</h2> <p>To setup and run only end-to-end experiments:</p> <div class=highlight><span class=filename>Ansible Container</span><pre><span></span><code>make<span class=w> </span>run-gvs-ee-experiment
 </code></pre></div> <h2 id=option-3-microbenchmarks>Option 3. Microbenchmarks</h2> <p>To setup and run only microbenchmark experiments:</p> <div class=highlight><span class=filename>Ansible Container</span><pre><span></span><code>make<span class=w> </span>run-gvs-bm-experiment
-</code></pre></div> <h2 id=option-4-custom-experiment>Option 4. Custom Experiment</h2> <p>To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in <code>vars/main.yml</code>.</p> <h3 id=config-1-locality>Config 1: Locality</h3> <p>The locality (high/low) to generate the correct traffic load. Choose an option from <code>locality_static</code>:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>68</span>
+</code></pre></div> <h2 id=option-4-custom-experiment>Option 4. Custom Experiment</h2> <p>To setup and run a specific experiment (with a given locality, pipeline, and Gigaflow tables configuration), modify the following variables in <code>vars/main.yml</code>.</p> <h3 id=config-1-locality>Config 1: Locality</h3> <p>The locality (high/low) to generate the correct traffic load. </p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>68</span>
 <span class=normal>69</span>
 <span class=normal>70</span></pre></div></td><td class=code><div><pre><span></span><code><span class=nt>locality_dynamic</span><span class=p>:</span>
 <span class=w>  </span><span class=nt>current</span><span class=p>:</span>
 <span class=w>    </span><span class=nt>locality</span><span class=p>:</span><span class=w> </span><span class=s>&quot;high-locality&quot;</span>
-</code></pre></div></td></tr></table></div> <h3 id=config-2-vswitch-pipeline>Config 2: vSwitch Pipeline</h3> <p>The pipeline to install and send traffic for. Choose an option from <code>pipelines_static</code>:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>77</span>
+</code></pre></div></td></tr></table></div> <p>Choose an option from <code>locality_static</code>. The other available options are as following:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>72</span>
+<span class=normal>73</span>
+<span class=normal>74</span>
+<span class=normal>75</span></pre></div></td><td class=code><div><pre><span></span><code><span class=nt>locality_static</span><span class=p>:</span>
+<span class=w>  </span><span class=nt>all</span><span class=p>:</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>locality</span><span class=p>:</span><span class=w> </span><span class=s>&quot;high-locality&quot;</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>locality</span><span class=p>:</span><span class=w> </span><span class=s>&quot;low-locality&quot;</span>
+</code></pre></div></td></tr></table></div> <h3 id=config-2-vswitch-pipeline>Config 2: vSwitch Pipeline</h3> <p>The pipeline to install in the vSwitch and send traffic for.</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>77</span>
 <span class=normal>78</span>
 <span class=normal>79</span>
 <span class=normal>80</span></pre></div></td><td class=code><div><pre><span></span><code><span class=nt>pipelines_dynamic</span><span class=p>:</span><span class=w> </span>
 <span class=w>  </span><span class=nt>current</span><span class=p>:</span><span class=w> </span>
 <span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s>&quot;cord-ofdpa&quot;</span>
 <span class=w>    </span><span class=nt>sub_path</span><span class=p>:</span><span class=w> </span><span class=s>&quot;cord/ofdpa&quot;</span>
-</code></pre></div></td></tr></table></div> <h3 id=config-3-gigaflow-tables>Config 3: Gigaflow Tables</h3> <p>The number of Gigaflow tables and entries in each of them. Choose an option from <code>gigaflow_static</code>:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>95</span>
+</code></pre></div></td></tr></table></div> <p>Choose an option from <code>pipelines_static</code>. Other available options are as following:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>82</span>
+<span class=normal>83</span>
+<span class=normal>84</span>
+<span class=normal>85</span>
+<span class=normal>86</span>
+<span class=normal>87</span>
+<span class=normal>88</span>
+<span class=normal>89</span>
+<span class=normal>90</span>
+<span class=normal>91</span>
+<span class=normal>92</span>
+<span class=normal>93</span></pre></div></td><td class=code><div><pre><span></span><code><span class=nt>pipelines_static</span><span class=p>:</span>
+<span class=w>  </span><span class=nt>all</span><span class=p>:</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s>&quot;antrea-ovs&quot;</span>
+<span class=w>      </span><span class=nt>sub_path</span><span class=p>:</span><span class=w> </span><span class=s>&quot;antrea/ovs&quot;</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s>&quot;ovn-logical-switch&quot;</span>
+<span class=w>      </span><span class=nt>sub_path</span><span class=p>:</span><span class=w> </span><span class=s>&quot;ovn/logical-switch&quot;</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s>&quot;pisces-l2l3-acl&quot;</span>
+<span class=w>      </span><span class=nt>sub_path</span><span class=p>:</span><span class=w> </span><span class=s>&quot;pisces/l2l3-acl&quot;</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s>&quot;cord-ofdpa&quot;</span>
+<span class=w>      </span><span class=nt>sub_path</span><span class=p>:</span><span class=w> </span><span class=s>&quot;cord/ofdpa&quot;</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s>&quot;openflow-ttp-l2l3-acl&quot;</span>
+<span class=w>      </span><span class=nt>sub_path</span><span class=p>:</span><span class=w> </span><span class=s>&quot;openflow-ttp/l2l3-acl&quot;</span>
+</code></pre></div></td></tr></table></div> <h3 id=config-3-gigaflow-tables>Config 3: Gigaflow Tables</h3> <p>The number of Gigaflow tables and entries in each of them.</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>95</span>
 <span class=normal>96</span>
 <span class=normal>97</span>
 <span class=normal>98</span>
@@ -23,6 +53,39 @@
 <span class=w>  </span><span class=nt>options</span><span class=p>:</span>
 <span class=w>      </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 <span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+</code></pre></div></td></tr></table></div> <p>Choose an option from <code>gigaflow_static</code>. Other available options are as following:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>vars/main.yml</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>101</span>
+<span class=normal>102</span>
+<span class=normal>103</span>
+<span class=normal>104</span>
+<span class=normal>105</span>
+<span class=normal>106</span>
+<span class=normal>107</span>
+<span class=normal>108</span>
+<span class=normal>109</span>
+<span class=normal>110</span>
+<span class=normal>111</span>
+<span class=normal>112</span>
+<span class=normal>113</span>
+<span class=normal>114</span>
+<span class=normal>115</span>
+<span class=normal>116</span>
+<span class=normal>117</span></pre></div></td><td class=code><div><pre><span></span><code><span class=nt>gigaflow_static</span><span class=p>:</span>
+<span class=w>  </span><span class=nt>ee</span><span class=p>:</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">32000</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+<span class=w>  </span><span class=nt>bm</span><span class=p>:</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class=w>    </span><span class="p p-Indicator">-</span><span class=w> </span><span class=nt>gigaflow_tables_limit</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class=w>      </span><span class=nt>gigaflow_max_entries</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
 </code></pre></div></td></tr></table></div> <p>Once these variables are setup, run the following sequence of commands. </p> <div class=highlight><span class=filename>Ansible Container</span><pre><span></span><code>make<span class=w> </span>resetup-tgen-scripts
 make<span class=w> </span>start-switch-gvs<span class=w> </span>
 make<span class=w> </span>install-rules

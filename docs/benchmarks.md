@@ -50,7 +50,6 @@ To setup and run a specific experiment (with a given locality, pipeline, and Gig
 ### Config 1: Locality
 
 The locality (high/low) to generate the correct traffic load. 
-Choose an option from `locality_static`:
 
 ```yaml title="vars/main.yml" linenums="68"
 locality_dynamic:
@@ -58,10 +57,19 @@ locality_dynamic:
     locality: "high-locality"
 ```
 
+Choose an option from `locality_static`.
+The other available options are as following:
+
+```yaml title="vars/main.yml" linenums="72"
+locality_static:
+  all:
+    - locality: "high-locality"
+    - locality: "low-locality"
+```
+
 ### Config 2: vSwitch Pipeline
 
-The pipeline to install and send traffic for.
-Choose an option from `pipelines_static`:
+The pipeline to install in the vSwitch and send traffic for.
 
 ```yaml title="vars/main.yml" linenums="77"
 pipelines_dynamic: 
@@ -70,10 +78,27 @@ pipelines_dynamic:
     sub_path: "cord/ofdpa"
 ```
 
+Choose an option from `pipelines_static`.
+Other available options are as following:
+
+```yaml title="vars/main.yml" linenums="82"
+pipelines_static:
+  all:
+    - name: "antrea-ovs"
+      sub_path: "antrea/ovs"
+    - name: "ovn-logical-switch"
+      sub_path: "ovn/logical-switch"
+    - name: "pisces-l2l3-acl"
+      sub_path: "pisces/l2l3-acl"
+    - name: "cord-ofdpa"
+      sub_path: "cord/ofdpa"
+    - name: "openflow-ttp-l2l3-acl"
+      sub_path: "openflow-ttp/l2l3-acl"
+```
+
 ### Config 3: Gigaflow Tables
 
 The number of Gigaflow tables and entries in each of them.
-Choose an option from `gigaflow_static`:
 
 ```yaml title="vars/main.yml" linenums="95"
 gigaflow_dynamic:
@@ -81,6 +106,29 @@ gigaflow_dynamic:
   options:
       gigaflow_tables_limit: 4
       gigaflow_max_entries: 8000
+```
+
+Choose an option from `gigaflow_static`.
+Other available options are as following:
+
+```yaml title="vars/main.yml" linenums="101"
+gigaflow_static:
+  ee:
+    - gigaflow_tables_limit: 1
+      gigaflow_max_entries: 32000
+    - gigaflow_tables_limit: 4
+      gigaflow_max_entries: 8000
+  bm:
+    - gigaflow_tables_limit: 1
+      gigaflow_max_entries: 100000
+    - gigaflow_tables_limit: 2
+      gigaflow_max_entries: 100000
+    - gigaflow_tables_limit: 3
+      gigaflow_max_entries: 100000
+    - gigaflow_tables_limit: 4
+      gigaflow_max_entries: 100000
+    - gigaflow_tables_limit: 5
+      gigaflow_max_entries: 100000
 ```
 
 Once these variables are setup, run the following sequence of commands. 
