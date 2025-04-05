@@ -90,9 +90,13 @@ We welcome contributions to Gigaflow! Whether it's improving documentation, fixi
 
 ## 📄 Research
 
-Gigaflow was presented at ASPLOS'25. Read our paper:
+Gigaflow was presented at ASPLOS'25. 
 
 📄 [Gigaflow: Pipeline-Aware Sub-Traversal Caching for Modern SmartNICs](https://dl.acm.org/doi/10.1145/3676641.3716000)
+
+&nbsp;
+
+More details on our [Publications page](publications.md).
 
 ## 🧑‍💼 Support
 
