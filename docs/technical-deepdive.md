@@ -1,9 +1,9 @@
 ---
-title: Technical Details
+title: Technical Deepdive
 description: Technical architecture and implementation details of Gigaflow
 ---
 
-# Technical Details
+# Technical Deepdive
 
 This document describes the technical architecture and implementation details of Gigaflow.
 

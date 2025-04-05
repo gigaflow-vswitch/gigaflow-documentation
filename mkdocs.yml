@@ -2,40 +2,46 @@ site_name: Gigaflow vSwitch (GvS)
 site_author: Annus Zulfiqar
 copyright: Copyright &copy; 2025 NextGArch Lab, University of Michigan
 
+watch:
+  - material
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Installation: installation.md
   - Usage Guide: usage.md
   - Benchmarks: benchmarks.md
-  - Technical Details: technical-details.md
+  - Technical Details: technical-deepdive.md
   - Contributing: contributing.md
   - References: publications.md
 
 theme: 
   name: material
+  custom_dir: material
   logo: assets/gf-icon-transparent-smaller.png
   favicon: assets/gf-icon-transparent-smaller.png
   features:
     - navigation.tabs
     - navigation.top
     - navigation.footer
+    - navigation.tabs.sticky
     - content.tooltips
     - search.suggest
     - search.highlight
     - toc.integrate
     - content.code.copy
     - dark_mode
+
   palette: 
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: black
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: black
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode

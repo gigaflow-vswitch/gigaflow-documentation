@@ -5,13 +5,20 @@ description: Research publications and documentation related to Gigaflow
 
 # Publications
 
-**ASPLOS 2025**   
+**NSDI 2025** (_Poster_)  
+_A Smart Cache for a SmartNIC! Rethinking Caching, Locality, & Revalidation for Modern Virtual Switches_  
+Annus Zulfiqar, Ali Imran, Venkat Kunaparaju, Ben Pfaff, Gianni Antichi, Muhammad Shahbaz 
+
+
+**ASPLOS 2025**  
 _Gigaflow: Pipeline-Aware Sub-Traversal Caching for Modern SmartNICs_  
 Annus Zulfiqar, Ali Imran, Venkat Kunaparaju, Ben Pfaff, Gianni Antichi, Muhammad Shahbaz
 
-**Hot Chips 2024**  
+
+**Hot Chips 2024** (_Poster_)  
 _Gigaflow: A Smart Cache for a SmartNIC!_  
 Annus Zulfiqar, Ali Imran, Venkat Kunaparaju, Ben Pfaff, Gianni Antichi, Muhammad Shahbaz
+
 
 **SIGCOMM CCR 2023**  
 _The Slow Path Needs an Accelerator Too!_  
@@ -40,7 +47,7 @@ publisher = {Association for Computing Machinery},
 }
 ```
 
-## Technical Documentation
+## Technical Deepdive
 
 We maintain detailed documentation about Gigaflow:
 
