@@ -33,5 +33,5 @@ To evaluate performance:
 ## Next Steps
 
 * See [Installation Instructions](installation.md) for setup details
-* Review [Technical Details](technical-details.md) for architecture information
+* Review [Technical Details](technical-deepdive.md) for architecture information
 * Check [Benchmarks](benchmarks.md) for performance evaluation guide

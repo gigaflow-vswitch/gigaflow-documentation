@@ -41,7 +41,7 @@ Unlike traditional caches (e.g, Megaflow) that capture entire traversals as cach
 
 ### 📚 Learn More
 
-* [Technical Details](technical-details.md)
+* [Technical Details](technical-deepdive.md)
 * [Benchmarking Guide](benchmarks.md)
 
 ## Research

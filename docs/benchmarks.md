@@ -161,6 +161,6 @@ The following table compares the iteration time (**s/it**) for different communi
 ## Documentation
 
 * [Getting Started](getting-started.md)
-* [Technical Details](technical-details.md)
+* [Technical Details](technical-deepdive.md)
 * [Installation Instructions](installation.md)
 * [Usage Instructions](usage.md)

@@ -40,7 +40,7 @@
   
 </style>
 
-<!--documetation-->
+<!--documentation-->
 <section class="section-dark-body w-100">
   <div class="md-grid conteiner-row pt-1 pt-lg-5 my-4">
     <div class="px-3 ctx-header-text conteiner">
@@ -53,15 +53,23 @@
         class="laverage-header-img d-lg-none d-xl-none d-md-none d-sm-none d-xs-none mx-auto" />
       <p class="h2-3 text-xs-center spacing t-b mb-5" style="font-family:Sans-serif; color:#A4CB6A;" id="animated-text"></p>
       <div class="conteiner-row conteiner-xs">
-        <button type="button" title="{{ page.next_page.title | e }}"
+        <!-- <button type="button" title="{{ page.next_page.title | e }}"
         onclick="scrollToLearnMoreSection()"
           class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           How it works
-        </button>
+        </button> -->
+        <a href="/getting-started/" class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow btn">
+          Learn More
+        </a>
         <button type="button" title="{{ page.next_page.title | e }}" 
           onclick="window.open('https://dl.acm.org/doi/10.1145/3676641.3716000', '_blank')"
           class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           ASPLOS'25 Paper
+        </button>
+        <button type="button" title="{{ page.next_page.title | e }}"
+          onclick="window.open('https://www.youtube.com/watch?v=tewxcn6uBHY', '_blank')"
+          class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+          Watch the Talk
         </button>
         <button type="button" title="{{ page.next_page.title | e }}" 
           onclick="window.open('https://github.com/gigaflow-vswitch', '_blank')"
@@ -71,7 +79,7 @@
       </div>
     </div>
     <div class="mt-4 pl-3">
-      <img src="assets/gf-icon-transparent-small.png" style="width: 60%; height: auto;"/>
+      <img src="assets/gf-icon-transparent-small.png" style="width: 55%; height: auto;"/>
     </div>
   </div>
 </section>

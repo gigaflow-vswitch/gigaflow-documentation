@@ -55,7 +55,7 @@ publisher = {Association for Computing Machinery},
 We maintain detailed documentation about Gigaflow:
 
 * [Getting Started and Usage](getting-started.md)
-* [Architecture and Implementation](technical-details.md)
+* [Architecture and Implementation](technical-deepdive.md)
 * [Performance Analysis](benchmarks.md)
 
 ## Contact

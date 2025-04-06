@@ -239,6 +239,6 @@ To evaluate Gigaflow performance against Megaflow cache with real-world workload
 ## Additional Documentation
 
 * [Getting Started](getting-started.md)
-* [Technical Details](technical-details.md)
+* [Technical Details](technical-deepdive.md)
 * [Performance Benchmarks](benchmarks.md)
 * [Usage Instructions](usage.md)

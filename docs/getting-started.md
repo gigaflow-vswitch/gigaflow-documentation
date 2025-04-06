@@ -68,7 +68,7 @@ See our [benchmarking guide](benchmarks.md) for various options to evaluate Giga
 
 * Check [Usage Guide](usage.md) for detailed configuration options
 * Checkout the [Benchmarking Guide](benchmarks.md) for in-depth performance evaluation
-* Read [Technical Details](technical-details.md) to learn about Gigaflow's architecture
+* Read [Technical Details](technical-deepdive.md) to learn about Gigaflow's architecture
 
 ### 🛠️ Optimizing Performance
 
