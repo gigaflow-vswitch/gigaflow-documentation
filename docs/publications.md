@@ -36,7 +36,7 @@ Annus Zulfiqar, Ben Pfaff, William Tu, Gianni Antichi, Muhammad Shahbaz
 * [Gianni Antichi](https://www.linkedin.com/in/gianniantichi/) (Politechnico di Milano)
 * [Muhammad Shahbaz](https://mshahbaz.gitlab.io/) (University of Michigan)
 
-### Citation
+### Cite Our Work
 
 Please cite this paper when using Gigaflow:
 
@@ -58,7 +58,7 @@ We maintain detailed documentation about Gigaflow:
 * [Architecture and Implementation](technical-deepdive.md)
 * [Performance Analysis](benchmarks.md)
 
-## Contact
+## Contact Us
 
 For research-related queries or collaborations:
 
