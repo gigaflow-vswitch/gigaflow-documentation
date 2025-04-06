@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 container.textContent = '';
                 i = 0;
                 showWord();
-            }, 2000); // Delay before restarting
+            }, 3000); // Delay before restarting
         }
     }
     showWord();
