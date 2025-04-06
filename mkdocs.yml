@@ -7,6 +7,7 @@ watch:
 
 nav:
   - Home: index.md
+  # - Redirect (hidden): home.md
   - Getting Started: getting-started.md
   - Installation: installation.md
   - Usage Guide: usage.md
