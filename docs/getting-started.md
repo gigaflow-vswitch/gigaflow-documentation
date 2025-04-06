@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: A guide to help you get started with OptiReduce
+description: A guide to help you get started with Gigaflow
 ---
 
 <!-- <div style="text-align: center; padding: 0px 0px 50px 0px;">
