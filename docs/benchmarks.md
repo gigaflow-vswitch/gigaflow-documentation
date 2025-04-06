@@ -5,7 +5,7 @@ description: Guide for benchmarking Gigaflow against various real-world workload
 
 # Gigaflow Benchmarking Guide
 
-This guide explains how to evaluate Gigaflow against Megaflow cache using real-world [vSwitch pipelines and traffic traces](installation.md).
+This guide explains how to evaluate Gigaflow against Megaflow cache using real-world [vSwitch pipelines and traffic traces](installation.md#workloads).
 
 ## Experiment Setup
 
