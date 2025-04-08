@@ -10,8 +10,8 @@ nav:
   # - Redirect (hidden): home.md
   - Getting Started: getting-started.md
   - Installation: installation.md
-  - Usage Guide: usage.md
   - Benchmarks: benchmarks.md
+  - Usage Guide: usage.md
   - Technical Details: technical-deepdive.md
   - Contributing: contributing.md
   - References: publications.md
