@@ -6,223 +6,230 @@
 
 <!-- Hero for landing page -->
 <style>
-  .md-header {
-    position: sticky
-  }
-
-  .md-main__inner {
-    margin: 0
-  }
-
-  .md-content {
-    display: none
-  }
-
-  @media screen and (min-width:60em) {
-    .md-sidebar--secondary {
-      display: none
+    .md-header {
+        position: sticky
     }
-  }
 
-  @media screen and (min-width:76.25em) {
-    .md-sidebar--primary {
-      display: none
+    .md-main__inner {
+        margin: 0
     }
-  }
 
-  code[class="language-python"] {
-        font-size: 0.75rem;
-  }
+    .md-content {
+        display: none
+    }
 
-  code[class="language-javascript"] {
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+    }
+
+    code[class="language-python"] {
         font-size: 0.75rem;
-  }
-  
+    }
+
+    code[class="language-javascript"] {
+        font-size: 0.75rem;
+    }
 </style>
 
 <!--documentation-->
 <section class="section-dark-body w-100">
-  <div class="md-grid container-row pt-1 pt-lg-5 my-2">
-    <div class="px-3 ctx-header-text container">
-      <div class="container-row">
-        <p class="h1 text-xs-center t-b">
-          <span style= "color:#306D64;">Gigaflow</span>
-        </p>
-      </div>
-      <img src="assets/gf-icon-transparent-small.png"
-        class="laverage-header-img d-lg-none d-xl-none d-md-none d-sm-none d-xs-none mx-auto" />
-      <p class="h2-3 text-xs-center spacing t-b mb-5" style="font-family:Sans-serif; color:#A4CB6A;" id="animated-text"></p>
-      <div class="container-row container-xs">
-        <!-- <button type="button" title="{{ page.next_page.title | e }}"
+    <div class="md-grid container-row pt-1 pt-lg-5 my-2">
+        <div class="px-3 ctx-header-text container">
+            <div class="container-row">
+                <p class="h1 text-xs-center t-b">
+                    <span style="color:#306D64;">Gigaflow</span>
+                </p>
+            </div>
+            <img src="assets/gf-icon-transparent-small.png"
+                class="laverage-header-img d-lg-none d-xl-none d-md-none d-sm-none d-xs-none mx-auto" />
+            <p class="h2-3 text-xs-center spacing t-b mb-5" style="font-family:Sans-serif; color:#A4CB6A;"
+                id="animated-text"></p>
+            <div class="container-row container-xs">
+                <!-- <button type="button" title="{{ page.next_page.title | e }}"
         onclick="scrollToLearnMoreSection()"
           class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
           How it works
         </button> -->
-        <a href="/getting-started/" class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow btn">
-          Learn More
-        </a>
-        <button type="button" title="{{ page.next_page.title | e }}" 
-          onclick="window.open('https://dl.acm.org/doi/10.1145/3676641.3716000', '_blank')"
-          class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
-          ASPLOS'25 Paper
-        </button>
-        <button type="button" title="{{ page.next_page.title | e }}"
-          onclick="window.open('https://www.youtube.com/watch?v=tewxcn6uBHY', '_blank')"
-          class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
-          Watch the Talk
-        </button>
-        <button type="button" title="{{ page.next_page.title | e }}" 
-          onclick="window.open('https://github.com/gigaflow-vswitch', '_blank')"
-          class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
-          Repository
-        </button>
-      </div>
+                <a href="/getting-started/"
+                    class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow btn">
+                    Learn More
+                </a>
+                <button type="button" title="{{ page.next_page.title | e }}"
+                    onclick="window.open('https://dl.acm.org/doi/10.1145/3676641.3716000', '_blank')"
+                    class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+                    Paper
+                </button>
+                <button type="button" title="{{ page.next_page.title | e }}"
+                    onclick="window.open('https://www.youtube.com/watch?v=tewxcn6uBHY', '_blank')"
+                    class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+                    Presentation
+                </button>
+                <button type="button" title="{{ page.next_page.title | e }}"
+                    onclick="window.open('https://github.com/gigaflow-vswitch', '_blank')"
+                    class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+                    Repository
+                </button>
+                <button type="button" title="{{ page.next_page.title | e }}"
+                    onclick="window.open('https://summerofcode.withgoogle.com/archive/2025/projects/YD415t5R', '_blank')"
+                    class="btn-pgreen btn-xl-large btn-lg-large mx-2 mt-2 my-md-4 my-lg-4 my-xl-4 box-shadow">
+                    Google Summer of Code
+                </button>
+            </div>
+        </div>
+        <div class="mt-4 pl-3">
+            <img src="assets/gf-icon-transparent-small.png" style="width: 55%; height: auto;" />
+        </div>
     </div>
-    <div class="mt-4 pl-3">
-      <img src="assets/gf-icon-transparent-small.png" style="width: 55%; height: auto;"/>
-    </div>
-  </div>
 </section>
 
 <section class="section-white-body w-100" , id="howwork">
-  <div class="text-align-center t-b text-dark h1 mt-5">
-    <p>How does Gigaflow work?</p>
-  </div>
-  <div class="center-container my-2">
-    <img src="assets/gigaflow-example-landing-page.gif" class="howdoeswork-img my-xs-5 my-sm-5 my-md-5" />
-  </div>
+    <div class="text-align-center t-b text-dark h1 mt-5">
+        <p>How does Gigaflow work?</p>
+    </div>
+    <div class="center-container my-2">
+        <img src="assets/gigaflow-example-landing-page.gif" class="howdoeswork-img my-xs-5 my-sm-5 my-md-5" />
+    </div>
 </section>
 
 <section class="section-lgreen w-100" id="howgood">
-  <div class="text-align-center t-b text-white h1 my-5">
-    <p>How Good is Gigaflow?</p>
-  </div>
-  <div class="main-container">
+    <div class="text-align-center t-b text-white h1 my-5">
+        <p>How Good is Gigaflow?</p>
+    </div>
+    <div class="main-container">
 
-    <div class="feature-container">
-      <div class="feature-text">
-          <h2>*Higher Cache Hit Rate</h2>
-          <p class="description">
-            Gigaflow delivers up to 51% higher cache hit rate (avg. 25%) on real-world pipelines
-          </p>
-          <!-- <p class="description" style="font-size: 1.0rem;"><br>Pipelines &#8594; OFD, PSC, OLS, ANT, OTL</p> -->
-      </div>
-      <div class="feature-image">
-        <img src="assets/eval-hit-rate.svg" alt="Cache Misses">
-      </div>
+        <div class="feature-container">
+            <div class="feature-text">
+                <h2>*Higher Cache Hit Rate</h2>
+                <p class="description">
+                    Gigaflow delivers up to 51% higher cache hit rate (avg. 25%) on real-world pipelines
+                </p>
+                <!-- <p class="description" style="font-size: 1.0rem;"><br>Pipelines &#8594; OFD, PSC, OLS, ANT, OTL</p> -->
+            </div>
+            <div class="feature-image">
+                <img src="assets/eval-hit-rate.svg" alt="Cache Misses">
+            </div>
+        </div>
+
+        <div class="feature-container">
+            <div class="feature-text">
+                <h2>*Lower Cache Misses</h2>
+                <p class="description">
+                    Gigaflow reduces cache misses by up to 90% and uses 18% lesser cache entries
+                </p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/eval-cache-misses.svg" alt="Cache Misses">
+            </div>
+        </div>
+
+        <div class="feature-container">
+            <div class="feature-text">
+                <h2>*Bigger Rule Space Coverage</h2>
+                <p class="description">
+                    Gigaflow captures up to 450x bigger rule space and thrives in dynamic environments
+                </p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/eval-dynamic-workloads.svg" alt="Cache Misses">
+            </div>
+        </div>
     </div>
 
-    <div class="feature-container">
-      <div class="feature-text">
-        <h2>*Lower Cache Misses</h2>
-        <p class="description">
-            Gigaflow reduces cache misses by up to 90% and uses 18% lesser cache entries
-        </p>
-      </div>
-      <div class="feature-image">
-        <img src="assets/eval-cache-misses.svg" alt="Cache Misses">
-      </div>
-    </div>
-
-    <div class="feature-container">
-      <div class="feature-text">
-          <h2>*Bigger Rule Space Coverage</h2>
-          <p class="description">
-            Gigaflow captures up to 450x bigger rule space and thrives in dynamic environments
-          </p>
-      </div>
-      <div class="feature-image">
-        <img src="assets/eval-dynamic-workloads.svg" alt="Cache Misses">
-      </div>
-    </div>
-  </div>
-
-  <p class="text-align-center hfooter mb-4">
-    * Gigaflow (GF) compared against Megaflow (MF) on 
-    <a href="https://dl.acm.org/doi/10.1145/3676641.3716000" style="color:#A4CB6A; text-decoration: underline;">
-      real-world pipelines (OFD, PSC, OLS, ANT, OTL) in high/low locality environments
-    </a>
-  </p>
+    <p class="text-align-center hfooter mb-4">
+        * Gigaflow (GF) compared against Megaflow (MF) on
+        <a href="https://dl.acm.org/doi/10.1145/3676641.3716000" style="color:#A4CB6A; text-decoration: underline;">
+            real-world pipelines (OFD, PSC, OLS, ANT, OTL) in high/low locality environments
+        </a>
+    </p>
 
 </section>
 
 <section class="section-white-body w-100" id="howwork">
-  <div class="text-align-center t-b text-dark h1 mt-5">
-    <p>What is the key insight?</p>
-  </div>
-
-  <div class="main-container">
-
-    <div class="feature-container">
-      <div class="feature-text">
-          <h2 style="color: #1F1F1F">Pipeline-Aware Locality</h2>
-          <p class="description" style="color: #1F1F1F; font-size: 1.5rem;">
-            Unlike Megaflow cache which captures traversals as cache entries,
-            Gigaflow partitions them and caches sub-traversals in a multi-table architecture.
-            Optimal selection of sub-traversals allows Gigaflow to capture a power form of locality, 
-            called <em>Pipeline-Aware Locality</em>.
-          </p>
-      </div>
-      <div class="feature-image">
-        <img src="assets/insight-sub-traversals.svg" alt="Sub-Traversals" style="box-shadow: none;">
-      </div>
+    <div class="text-align-center t-b text-dark h1 mt-5">
+        <p>What is the key insight?</p>
     </div>
 
-    <div class="feature-container">
-      <div class="feature-text" style="color: black;">
-        <h2 style="color: #1F1F1F">Disjointedness Property</h2>
-        <p class="description" style="color: #1F1F1F; font-size: 1.5rem;">
-            To capture pipeline-aware locality efficiently, 
-            Gigaflow capitalizes on the inherent <em>disjointedness</em> in vSwitch traversals
-            to maximize the cross-product rule space coverage in its multi-table pipeline. 
-        </p>
-      </div>
-      <div class="feature-image">
-        <img src="assets/insight-disjointedness.svg" alt="Cache Misses" style="box-shadow: none;">
-      </div>
-    </div>
+    <div class="main-container">
 
-  </div>
+        <div class="feature-container">
+            <div class="feature-text">
+                <h2 style="color: #1F1F1F">Pipeline-Aware Locality</h2>
+                <p class="description" style="color: #1F1F1F; font-size: 1.5rem;">
+                    Unlike Megaflow cache which captures traversals as cache entries,
+                    Gigaflow partitions them and caches sub-traversals in a multi-table architecture.
+                    Optimal selection of sub-traversals allows Gigaflow to capture a power form of locality,
+                    called <em>Pipeline-Aware Locality</em>.
+                </p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/insight-sub-traversals.svg" alt="Sub-Traversals" style="box-shadow: none;">
+            </div>
+        </div>
+
+        <div class="feature-container">
+            <div class="feature-text" style="color: black;">
+                <h2 style="color: #1F1F1F">Disjointedness Property</h2>
+                <p class="description" style="color: #1F1F1F; font-size: 1.5rem;">
+                    To capture pipeline-aware locality efficiently,
+                    Gigaflow capitalizes on the inherent <em>disjointedness</em> in vSwitch traversals
+                    to maximize the cross-product rule space coverage in its multi-table pipeline.
+                </p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/insight-disjointedness.svg" alt="Cache Misses" style="box-shadow: none;">
+            </div>
+        </div>
+
+    </div>
 
 </section>
 
 <section class="section-white-body w-100" , id="sponsors">
-  <div class="text-align-center t-b text-dark h1-2 mt-4">
-    <p>Acknowledgement</p>
-  </div>
+    <div class="text-align-center t-b text-dark h1-2 mt-4">
+        <p>Acknowledgement</p>
+    </div>
 
-  <div class="text-align-center t-500 text-dark h3 my-3">
-    <p><span class="t-b italic h2-2">Sponsors:</span><br>
-      <!-- <a href="https://cse.engin.umich.edu/" target="_blank" class="custom-link-text">University of Michigan, </a> -->
-      University of Michigan,
-      <a href="https://nextgarch.github.io" target="_blank" class="custom-link-text">NextGArch Laboratory</a>
-      <!-- <a href="https://www.cs.purdue.edu/" target="_blank" class="custom-link-text">Purdue University, </a> -->
-      , Purdue University,
-      <br>
-      <a href="https://acecenter.grainger.illinois.edu/" target="_blank" class="custom-link-text">SRC JUMP 2.0 ACE Center</a>
-      <!-- <a href="https://www.vmware.com/" target="_blank" class="custom-link-text">VMWare by Broadcom</a> -->
-      , NSF, and VMware by Broadcom
-      <!-- <br> Meta, Google Cloud, AWS, Microsoft Azure, CloudLab, Sloan Foundation VMware, and NSF -->
-    </p><br>
-  </div>
+    <div class="text-align-center t-500 text-dark h3 my-3">
+        <p><span class="t-b italic h2-2">Sponsors:</span><br>
+            <!-- <a href="https://cse.engin.umich.edu/" target="_blank" class="custom-link-text">University of Michigan, </a> -->
+            University of Michigan,
+            <a href="https://nextgarch.github.io" target="_blank" class="custom-link-text">NextGArch Laboratory</a>
+            <!-- <a href="https://www.cs.purdue.edu/" target="_blank" class="custom-link-text">Purdue University, </a> -->
+            , Purdue University,
+            <br>
+            <a href="https://acecenter.grainger.illinois.edu/" target="_blank" class="custom-link-text">SRC JUMP 2.0 ACE
+                Center</a>
+            <!-- <a href="https://www.vmware.com/" target="_blank" class="custom-link-text">VMWare by Broadcom</a> -->
+            , NSF, and VMware by Broadcom
+            <!-- <br> Meta, Google Cloud, AWS, Microsoft Azure, CloudLab, Sloan Foundation VMware, and NSF -->
+        </p><br>
+    </div>
 
 </section>
 
 <section class="section-dark-body w-100" id="contactus">
-  <div class="text-align-center t-b text-primary-color h1-2 mt-2">
-    <p>Contact Us</p>
-  </div>
+    <div class="text-align-center t-b text-primary-color h1-2 mt-2">
+        <p>Contact Us</p>
+    </div>
 
-  <div class="text-align-center t-500 text-dark h3 mt-3 mb-4">
-    <a href="mailto:zulfiqaa@umich.edu" target="_blank" class="custom-link">
-      <i class="fa-solid fa-envelope fa-2x"></i></a>
-    <a href="https://nextgarch.github.io" target="_blank" class="custom-link">
-      <i class="fa-solid fa-people-group fa-2x"></i></a>
-    <a href="https://github.com/gigaflow-vswitch" target="_blank" class="custom-link">
-      <i class="fa-brands fa-github fa-2x"></i></a>
-    <a href="https://x.com/annus_zulfiqar" target="_blank" class="custom-link">
-      <i class="fa-brands fa-twitter fa-2x"></i></a>
-  </div>
+    <div class="text-align-center t-500 text-dark h3 mt-3 mb-4">
+        <a href="mailto:zulfiqaa@umich.edu" target="_blank" class="custom-link">
+            <i class="fa-solid fa-envelope fa-2x"></i></a>
+        <a href="https://nextgarch.github.io" target="_blank" class="custom-link">
+            <i class="fa-solid fa-people-group fa-2x"></i></a>
+        <a href="https://github.com/gigaflow-vswitch" target="_blank" class="custom-link">
+            <i class="fa-brands fa-github fa-2x"></i></a>
+        <a href="https://x.com/annus_zulfiqar" target="_blank" class="custom-link">
+            <i class="fa-brands fa-twitter fa-2x"></i></a>
+    </div>
 
 </section>
 
